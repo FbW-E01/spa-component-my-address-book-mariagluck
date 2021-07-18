@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap");
+
+body {
+  box-sizing: border-box;
+  background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  font-family: "Karla", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr 1.3fr 0.7fr;
+  grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". title title ."
+    ". AddContact Search ."
+    ". AddContact Search ."
+    ". . . .";
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 40px;
+  margin-bottom: 0;
+  border: solid 1px black;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.title {
+  grid-area: title;
+  margin: 50px auto;
+}
+
+.addContact {
+  grid-area: AddContact;
+  margin-right: 50px;
+}
+
+form {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+label {
+  display: inline-block;
+  clear: left;
+  width: 250px;
+  text-align: right;
+}
+
+input {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+  border: solid 1px black;
+  border-radius: 4px;
+}
+
+.add_btn {
+  padding: 10px 30px;
+  border: solid 1px black;
+  display: inline-block;
+  clear: left;
+  width: 200px;
+  text-align: center;
+  margin-left: 270px;
+}
+
+button {
+  display: inline-block;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 5px 10px;
+}
+
+.search {
+  grid-area: Search;
+  margin: 0;
+  margin-left: 50px;
+}
+
+h3 {
+  padding: 0 10px;
+  margin: 0 15px;
+}
+
+.searchContact {
+  margin-top: 0;
+}
+
+.contactList {
+  grid-area: contactList;
+  margin: 0;
+}
+
+ul {
+  height: 60vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  overflow-y: scroll;
+}
+
+li {
+  list-style-type: none;
+  padding: 20px;
+  margin: 10px;
+  width: fit-content;
+  line-height: 20px;
+}
+
+.delete_btn {
+  border: 1px solid white;
+  color: white;
+}
+
+/* scroll bar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/*scroll bar  Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white;
+  border-radius: 10px;
+}
+
+/* scroll bar Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
