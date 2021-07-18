@@ -89,8 +89,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {this.state.display === true ? ( <div className="loading"></div>) : 
-        (
+        {this.state.display === true ? (
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        ) : (
           <div className="container">
             <div className="title">
               <h1>ADDRESS BOOK</h1>
