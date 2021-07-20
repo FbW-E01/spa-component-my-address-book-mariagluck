@@ -3,7 +3,7 @@ import App from "../App.jsx";
 import "./style.css";
 
 class Contact extends React.Component {
-  
+
   render() {
     return (
       <div className="contactList">
@@ -16,7 +16,7 @@ class Contact extends React.Component {
           EMail: {this.props.contact.email}
         </p>
         {/* not working well this delete contact button! */}
-        <button onClick={() => props.deleteContact(i)} className="delete_btn"> 
+        <button onClick={() => props.deleteContact()} className="delete_btn"> 
           Delete contact
         </button>
       </li>

@@ -50,7 +50,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      display: true,
+      isLoading: true,
       contacts: contacts,
     };
   }
@@ -65,36 +65,40 @@ class App extends React.Component {
       contacts: contact,
     });
 
-    this.delay = setTimeout(() => {
-      this.setState({ display: false });
+    this.delay = setInterval(() => {
+      this.setState({ isLoading: false });
     }, 3000);
   }
 
+
   addContact = (person) => {
-    let contacts = this.state.contacts;
+    let contacts = [...this.state.contacts];
 
     contacts.push(person);
 
     this.setState({
       contacts: contacts,
     });
+    localStorage.setItem("contact", JSON.stringify(contacts))
   };
 
   deleteContact = (i) => {
     let contacts = this.state.contacts;
     contacts.splice(i, 1);
     this.setState({ contacts: contacts });
+    localStorage.setItem("contact", JSON.stringify(newContacts))
   };
+  
 
   render() {
     return (
       <div>
-        {this.state.display === true ? 
+        {this.state.isLoading === true ? 
         (
-          <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
+          <div className="spinner">
+            <div className="bounce1"></div>
+            <div className="bounce2"></div>
+            <div className="bounce3"></div>
           </div>
         ) : 
         (
